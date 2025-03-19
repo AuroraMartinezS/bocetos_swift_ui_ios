@@ -12,14 +12,16 @@ struct Temporada{
     var cantidad_capitulos: Int
 }
 
-struct Plataforma{
+struct Plataforma: Identifiable{
+  var id = UUID()
+    
     var nombre: String
     var icono: String
 }
 
 struct InformacionSerie: Identifiable{
     
-    //var id:
+    var id = UUID() //
     
     var nombre: String
     var tipo: String
