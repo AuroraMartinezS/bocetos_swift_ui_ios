@@ -27,6 +27,11 @@ class VistaModeloBasico{
             series_registradas.append(InformacionSerie(nombre: "Prueba", tipo: "Prueba", fecha_estreno: 2018, sinopsis: "sinopsis larga", caratula: "linkImagen"))
         }
         
+        estado_actual_de_aplicacion = .mostrando_series
         return true;
+    }
+    
+    func cambiar_a_agregar_series() -> Void{
+        estado_actual_de_aplicacion = .agregando_series
     }
 }
