@@ -26,13 +26,19 @@ struct AgregarSerie : View {
     
     var body: some View {
         Text("PELISFLIX")
+            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            .font(.largeTitle)
+            .foregroundStyle(.indigo)
+        Text("Registro de Series")
+            .fontWeight(.thin)
+            .font(.title3)
         TextField("Nombre", text: $nombre_de_la_serie)
         
         if indicar_problemas{
             Text("Hay un problema con tu serie, no tiene su nombre")
         }
         
-        TextField("Tipo", text: $tipo_de_serie)
+        TextField("Tipo", text: $tipo_de_serie).background(.)
         
         Spacer()
         Text("Plataformas")
