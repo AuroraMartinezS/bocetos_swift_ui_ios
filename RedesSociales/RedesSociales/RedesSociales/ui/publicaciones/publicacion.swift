@@ -14,14 +14,16 @@ struct PublicacionVista: View {
     @Environment(ControladorAplicacion.self) var controlador
         
     var body: some View {
-        Text("\(controlador.publicacion_seleccionada?.title)")
-        Text("\(controlador.publicacion_seleccionada?.body)")
+        Text("\(controlador.publicacion_seleccionada?.title ?? "valor por defecto")" )
+        Text("\(controlador.publicacion_seleccionada?.body ?? "valor por defecto")")
         
         NavigationLink{
-            Text("Hola Mundito")
+            PerfilBasicoVista()
         }label: {
             Text("Ver perfil")
-        }
+        }.simultaneousGesture(TapGesture().onEnded({
+            controlador.ver_perfil(id: controlador.publicacion_seleccionada!.userId)
+        }))
         
         ScrollView{
             VStack{

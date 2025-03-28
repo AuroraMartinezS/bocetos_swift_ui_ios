@@ -22,11 +22,14 @@ class PlaceHolderAPI : Codable{
         return await descargar(recurso: ubicacion_recurso)
     }
     
-    
+    func descargar_perfil(id: Int) async -> Perfil? {
+        let ubicacion_recurso = "/users/\(id)"
+        return await descargar(recurso: ubicacion_recurso)
+    }
     
     private func descargar<TipoGenerico: Codable>(recurso: String) async -> TipoGenerico? {
         do {
-            guard let url = URL(string: "\(url_de_servicio)/posts") else {throw ErroresDeRed.badUrl}
+            guard let url = URL(string: "\(url_de_servicio)\(recurso)") else {throw ErroresDeRed.badUrl}
             let (datos, respuesta) = try await URLSession.shared.data(from: url)
             guard let respuesta = respuesta as? HTTPURLResponse else {throw ErroresDeRed.badResponse}
             guard respuesta.statusCode >= 200 && respuesta.statusCode < 300 else {throw ErroresDeRed.badStatus}
@@ -57,32 +60,3 @@ class PlaceHolderAPI : Codable{
         return nil;
     }
 }
-
-
-/*
-  const fs = require(node: fs)
- 
- 
- fs.readdir("./json", (err, files) => {
-        
- if(err){
- console.log("ERROR")
- }else{
-    
-    for(i= 0; i < files.length; i++){
-        fs.readfile("./json/" + files[i], "utf8", (error, archivo)=>{
-            
- 
- })
- 
- }
- 
- }
- 
- 
- })
- 
- 
- 
- 
- */
