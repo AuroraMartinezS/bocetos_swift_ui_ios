@@ -7,25 +7,41 @@
 
 import SwiftUI
 
-let publicacion_falsa = Publicacion(userId: 1, id: 1, title: "String", body: "Lorem iPSUM")
+//let publicacion_falsa = Publicacion(userId: 1, id: 1, title: "String", body: "Lorem iPSUM")
 
 struct PublicacionVista: View {
-    
-    let publicacion_a_mostrar: Publicacion
+
     @Environment(ControladorAplicacion.self) var controlador
-    
+        
     var body: some View {
-        Text("\(publicacion_a_mostrar.title)")
-        Text("\(publicacion_a_mostrar.body)")
+        Text("\(controlador.publicacion_seleccionada?.title)")
+        Text("\(controlador.publicacion_seleccionada?.body)")
+        
+        NavigationLink{
+            Text("Hola Mundito")
+        }label: {
+            Text("Ver perfil")
+        }
         
         ScrollView{
             VStack{
-                //For each para comentarios de la publicacion
+                ForEach(controlador.comentarios){ comentario in
+                    Text(" NO HAY COMENTARIOS ")
+                    Text("Usuario: \(comentario.name)")
+                    Text("\(comentario.body)")
+                }
             }
         }
     }
 }
 
+
 #Preview {
-    PublicacionVista(publicacion_a_mostrar: publicacion_falsa)
+    NavigationStack{
+       
+        PublicacionVista()
+            .environment(ControladorAplicacion())
+        
+    }
+    
 }

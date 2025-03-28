@@ -13,7 +13,9 @@ import SwiftUI
 public class ControladorAplicacion{
     
     var publicaciones: Array<Publicacion> = []
-    var publicacion_seleccionada : Int = -1
+    var comentarios: Array<Comentario> = []
+    
+    var publicacion_seleccionada : Publicacion? = nil
     
     init(){
         Task.detached(priority: .high){
@@ -41,11 +43,19 @@ public class ControladorAplicacion{
             print("Esta función se mando a llamar después de todos los awaits en mi función \(#function)")
         }
         
-        guard let publicaciones_descargadas: [Publicacion] = try? await PlaceHolderAPI().descargar_publicaciones() else{
+        guard let comentarios_descargadas: [Comentario] = try? await PlaceHolderAPI().descargar_comentarios(post_id: self._publicacion_seleccionada!.id) else{
             return
         }
-        publicaciones = publicaciones_descargadas;
+        comentarios = comentarios_descargadas;
         
+    }
+    
+    func seleccionar_publicacion(_ publicacion: Publicacion) -> Void{
+        publicacion_seleccionada = publicacion
+        
+        Task.detached(operation: {
+            await self.descargar_comentarios()
+        })
     }
     
 }
