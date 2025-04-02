@@ -18,6 +18,7 @@ struct GeneralPublicaciones: View{
             ScrollView{
                 Text("Tus Mensajes")
                     .font(.system(size: 40, weight: .heavy))
+                    .foregroundStyle(.teal)
                 VStack{
                     ForEach(controlador.publicaciones){publicacion in
                         NavigationLink{
@@ -29,17 +30,21 @@ struct GeneralPublicaciones: View{
                                     Text("#\(publicacion.id)")
                                         .fontWeight(.bold)
                                         .foregroundStyle(.teal)
+                                        .padding(15)
+                                        .overlay(
+                                        RoundedRectangle(cornerRadius: 50)
+                                            .stroke(Color.teal, lineWidth: 2)
+                                        )
                                         
                                     Text("\(publicacion.title)")
                                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                         .foregroundStyle(Color("newSecondaryColor"))
-                                       
-                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        .font(.system(size: 18))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
                                 }
-                                .padding(6)
+                                .padding(5)
                                 .frame(maxWidth: .infinity)
 
-                                
                                 Text("\(publicacion.body)")
                                     .foregroundStyle(.white)
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,8 +59,6 @@ struct GeneralPublicaciones: View{
                                             RoundedRectangle(cornerRadius: 15)
                                                 .stroke(.teal, lineWidth: 2)
                                         )
-
-                            
                         }
                         .simultaneousGesture(TapGesture().onEnded({
                             controlador.seleccionar_publicacion(publicacion)

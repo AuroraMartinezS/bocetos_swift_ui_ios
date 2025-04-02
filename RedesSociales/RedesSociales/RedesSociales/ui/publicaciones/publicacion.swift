@@ -28,7 +28,7 @@ struct PublicacionVista: View {
         ScrollView{
             VStack{
                 ForEach(controlador.comentarios){ comentario in
-                    Text(" NO HAY COMENTARIOS ")
+
                     Text("Usuario: \(comentario.name)")
                     Text("\(comentario.body)")
                 }

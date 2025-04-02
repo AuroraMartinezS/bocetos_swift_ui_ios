@@ -17,7 +17,7 @@ struct MenuNavegacion: View {
                 .badge(controlador.publicaciones.count)
             
             Text("Hola Mundis")
-                .tabItem { Label("Perfil", systemImage: "person.crop.circle.fill") }
+                .tabItem { Label("Dragon Ball API", systemImage: "person.crop.circle.fill") }
             Text("Hola desde pantalla3")
                 .tabItem { Label("Etiqueta de este label", systemImage: "circle") }
         }
