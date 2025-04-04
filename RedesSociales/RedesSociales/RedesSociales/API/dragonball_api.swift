@@ -22,9 +22,15 @@ class DragonBallAPI: Codable{
             let (datos, respuesta) = try await URLSession.shared.data(from: url)
             guard let respuesta = respuesta as? HTTPURLResponse else {throw ErroresDeRed.badResponse}
             guard respuesta.statusCode >= 200 && respuesta.statusCode < 300 else {throw ErroresDeRed.badStatus}
-            guard let respuesta_decodificada = try? JSONDecoder().decode(TipoGenerico.self, from: datos) else {throw ErroresDeRed.fallaAlConvertirLaRespuesta}
             
-            return respuesta_decodificada
+            do{
+                let respuesta_decodificada = try JSONDecoder().decode(TipoGenerico.self, from: datos)
+                return respuesta_decodificada
+            }
+            catch let error as NSError{
+                print("El error en tu modelo es: \(error.debugDescription)")
+                throw ErroresDeRed.fallaAlConvertirLaRespuesta
+            }
         }
         catch ErroresDeRed.badUrl {
             print("Direcccion URL incorrecta.")

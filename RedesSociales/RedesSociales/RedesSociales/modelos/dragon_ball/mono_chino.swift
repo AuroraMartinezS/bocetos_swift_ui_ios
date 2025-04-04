@@ -14,10 +14,11 @@ struct MonoChino: Identifiable, Codable{
         let race: String
         let gender: String
         let description: String
+    
         let image: String
         let affiliation: String
-        let originPlanet: Planeta
+        let originPlanet: Planeta?
         //let transformation: Array<Transformacion
-        let transformation : [Transformacion]
+        let transformation : [Transformacion]?
     }
 
