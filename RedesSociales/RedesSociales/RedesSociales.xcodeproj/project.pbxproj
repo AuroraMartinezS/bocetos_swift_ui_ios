@@ -28,6 +28,7 @@
 		FBD4838B2D94535D0088C8E5 /* controlador_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4838A2D94535D0088C8E5 /* controlador_app.swift */; };
 		FBD4838D2D945E910088C8E5 /* publicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4838C2D945E910088C8E5 /* publicacion.swift */; };
 		FBD4838F2D9463400088C8E5 /* comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4838E2D9463400088C8E5 /* comentario.swift */; };
+		FBFE7CFB2DA425D400F97FD6 /* personaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFE7CFA2DA425D400F97FD6 /* personaje.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		FBD4838A2D94535D0088C8E5 /* controlador_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controlador_app.swift; sourceTree = "<group>"; };
 		FBD4838C2D945E910088C8E5 /* publicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = publicacion.swift; sourceTree = "<group>"; };
 		FBD4838E2D9463400088C8E5 /* comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comentario.swift; sourceTree = "<group>"; };
+		FBFE7CFA2DA425D400F97FD6 /* personaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personaje.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				FB9F30CA2DA0340400E36D79 /* pantalla_personajes.swift */,
+				FBFE7CFA2DA425D400F97FD6 /* personaje.swift */,
 			);
 			path = dragon_ball;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				FB23935E2D91BC40001F3202 /* controlador_publicaciones.swift in Sources */,
 				FB2393472D91B0B0001F3202 /* RedesSocialesApp.swift in Sources */,
 				FB056F352D9D966800E29DE6 /* planeta.swift in Sources */,
+				FBFE7CFB2DA425D400F97FD6 /* personaje.swift in Sources */,
 				FB23935C2D91B4A7001F3202 /* errores.swift in Sources */,
 				FBD4838B2D94535D0088C8E5 /* controlador_app.swift in Sources */,
 			);

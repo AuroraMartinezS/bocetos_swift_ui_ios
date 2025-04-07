@@ -13,9 +13,13 @@ struct PantallaPersonaje: View {
     
     var body: some View{
         if(controlador.pagina_resultados != nil){
+            NavigationStack{
             ScrollView{
                 LazyVStack{
                     ForEach(controlador.pagina_resultados!.items){ personaje in
+                        NavigationLink{
+                            Personaje()
+                        } label: {
                         
                         VStack(){
                            Text("\(personaje.name)")
@@ -41,27 +45,23 @@ struct PantallaPersonaje: View {
                                  .fontWeight(.semibold)
                                  .foregroundStyle(Color("newPrimaryColor"))
                                  .padding(20)
-                            Text("\(personaje.description)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 16))
-                                .foregroundStyle(Color("newPrimaryColor"))
-                                .padding(20)
-                        }
-                        
-                        .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
                                 
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .stroke(.teal, lineWidth: 2)
-                                    )
-                            
+                        }
+                        .clipShape(RoundedRectangle(cornerSize: esquinas_redondeadas))
+                                .overlay(RoundedRectangle(cornerRadius: 15)
+                                        .stroke(.teal, lineWidth: 2))
+                        
+                        } //ESTE ES DEL LABEL
+                        .simultaneousGesture(TapGesture().onEnded({
+                            controlador.seleccionar_personaje(personaje)
+                        }))
                     }
                     
                 }.padding(15)
             }
         }
 
+    }
     }
 }
 

@@ -14,7 +14,9 @@ public class ControladorAplicacion{
     
     var publicaciones: Array<Publicacion> = []
     var comentarios: Array<Comentario> = []
+    var personajes: Array<MonoChino> = [] // NUEVO
     
+    var personaje_seleccionado : MonoChino? = nil
     var publicacion_seleccionada : Publicacion? = nil
     var perfil_a_mostrar: Perfil? = nil
     
@@ -33,6 +35,7 @@ public class ControladorAplicacion{
         guard let pagina_descargada: PaginaResultados = try? await DragonBallAPI().descargar_pagina_personajes() else {return}
         
         self.pagina_resultados = pagina_descargada
+        personajes = pagina_descargada.items // NUEVO
         
         await print(DragonBallAPI().descargar_pagina_personajes())
     }
@@ -47,8 +50,6 @@ public class ControladorAplicacion{
             return
         }
         publicaciones = publicaciones_descargadas;
-        
-        
     }
     
     func descargar_comentarios() async {
@@ -62,6 +63,9 @@ public class ControladorAplicacion{
         }
         comentarios = comentarios_descargadas;
     }
+    
+    func seleccionar_personaje(_ personaje: MonoChino)-> Void{
+        personaje_seleccionado = personaje    }
     
     func seleccionar_publicacion(_ publicacion: Publicacion) -> Void{
         publicacion_seleccionada = publicacion
