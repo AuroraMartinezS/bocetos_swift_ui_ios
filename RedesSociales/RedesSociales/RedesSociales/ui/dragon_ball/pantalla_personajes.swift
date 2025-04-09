@@ -53,15 +53,19 @@ struct PantallaPersonaje: View {
                         
                         } //ESTE ES DEL LABEL
                         .simultaneousGesture(TapGesture().onEnded({
-                            controlador.seleccionar_personaje(personaje)
+                            controlador//.seleccionar_personaje(personaje)
+                                .descargar_informacioncompleta_personaje(id: personaje.id)
                         }))
                     }
                     
                 }.padding(15)
+                    
             }
         }
+            
 
     }
+        
     }
 }
 

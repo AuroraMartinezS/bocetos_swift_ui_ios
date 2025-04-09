@@ -21,6 +21,7 @@
 		FB23935C2D91B4A7001F3202 /* errores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23935B2D91B4A7001F3202 /* errores.swift */; };
 		FB23935E2D91BC40001F3202 /* controlador_publicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23935D2D91BC40001F3202 /* controlador_publicaciones.swift */; };
 		FB2393622D91BE21001F3202 /* publicaciones_general.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2393612D91BE21001F3202 /* publicaciones_general.swift */; };
+		FB9A59AE2DA6D16A0091FAD7 /* planetaOrigen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9A59AD2DA6D16A0091FAD7 /* planetaOrigen.swift */; };
 		FB9F30CB2DA0340400E36D79 /* pantalla_personajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9F30CA2DA0340400E36D79 /* pantalla_personajes.swift */; };
 		FBBBBB822D9700FA003B7DA8 /* perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBBB812D9700FA003B7DA8 /* perfil.swift */; };
 		FBBBBB852D97046B003B7DA8 /* perfil_vista_basica.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBBB842D97046B003B7DA8 /* perfil_vista_basica.swift */; };
@@ -47,6 +48,7 @@
 		FB23935B2D91B4A7001F3202 /* errores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errores.swift; sourceTree = "<group>"; };
 		FB23935D2D91BC40001F3202 /* controlador_publicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controlador_publicaciones.swift; sourceTree = "<group>"; };
 		FB2393612D91BE21001F3202 /* publicaciones_general.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = publicaciones_general.swift; sourceTree = "<group>"; };
+		FB9A59AD2DA6D16A0091FAD7 /* planetaOrigen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetaOrigen.swift; sourceTree = "<group>"; };
 		FB9F30CA2DA0340400E36D79 /* pantalla_personajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_personajes.swift; sourceTree = "<group>"; };
 		FBBBBB812D9700FA003B7DA8 /* perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil.swift; sourceTree = "<group>"; };
 		FBBBBB842D97046B003B7DA8 /* perfil_vista_basica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil_vista_basica.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				FB9F30CA2DA0340400E36D79 /* pantalla_personajes.swift */,
 				FBFE7CFA2DA425D400F97FD6 /* personaje.swift */,
+				FB9A59AD2DA6D16A0091FAD7 /* planetaOrigen.swift */,
 			);
 			path = dragon_ball;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				FBBBBB822D9700FA003B7DA8 /* perfil.swift in Sources */,
 				FB056F392D9D98C500E29DE6 /* dragonball_api.swift in Sources */,
 				FB2393492D91B0B0001F3202 /* ContentView.swift in Sources */,
+				FB9A59AE2DA6D16A0091FAD7 /* planetaOrigen.swift in Sources */,
 				FBD4838F2D9463400088C8E5 /* comentario.swift in Sources */,
 				FBD4838D2D945E910088C8E5 /* publicacion.swift in Sources */,
 				FB23935E2D91BC40001F3202 /* controlador_publicaciones.swift in Sources */,
