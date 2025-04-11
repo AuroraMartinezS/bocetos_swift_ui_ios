@@ -32,12 +32,14 @@ struct PantallaPersonaje: View {
                                     result.image?
                                     .resizable()
                                     .scaledToFill()
+                                
                                     }
-                                    .frame(width: 120, height: 120)
+                                    .frame(width: 130, height: 130)
                                     .padding(100)
                                     .frame(maxWidth: .infinity)
                                     .background(Color.teal)
                                     .shadow(color: Color("newPrimaryColor"), radius: 5, x: 0, y: 1)
+                            
                             Text("\(personaje.race) - \(personaje.gender)\nAfiliación: \(personaje.affiliation)\nBaseKi: \(personaje.ki)\nTotal KI: \(personaje.maxKi)")
                                  .frame(maxWidth: .infinity, alignment: .leading)
                                  .multilineTextAlignment(.leading)

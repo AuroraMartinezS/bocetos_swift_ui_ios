@@ -33,7 +33,7 @@ struct PublicacionVista: View {
                     PerfilBasicoVista()
                 }label: {
                     Text("Ver perfil")
-                        .foregroundStyle(Color.teal)
+                        .foregroundStyle(Color.indigo)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .padding(10)
                         .background(Color("newSecondaryColor"))
@@ -43,7 +43,7 @@ struct PublicacionVista: View {
                 }))
             }
             .padding(10)
-            .background(Color("secundaryBackgroundColor"))
+            .background(Color("backgroundColor"))
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
             
             ScrollView{
@@ -54,7 +54,9 @@ struct PublicacionVista: View {
                             Text("\(comentario.name)")
                                 .italic()
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .foregroundStyle(Color("newPrimaryColor"))
                             Text("\(comentario.body)")
+                                .foregroundStyle(Color("newPrimaryColor"))
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(10)
