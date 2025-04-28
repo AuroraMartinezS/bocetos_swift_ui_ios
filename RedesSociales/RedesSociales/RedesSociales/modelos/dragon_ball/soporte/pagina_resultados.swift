@@ -21,12 +21,9 @@ struct Enlaces: Codable{
 }
 
 struct PaginaResultados: Codable{
-    
     //var id: Int = Self.meta.currentPage
-    
         let items: [MonoChino]
         let meta: Meta
         let links: Enlaces
-    
-    
+
 }

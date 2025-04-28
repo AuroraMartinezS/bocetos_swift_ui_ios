@@ -38,7 +38,7 @@ struct PantallaPersonaje: View {
                                     .padding(100)
                                     .frame(maxWidth: .infinity)
                                     .background(Color.teal)
-                                    .shadow(color: Color("newPrimaryColor"), radius: 5, x: 0, y: 1)
+                                    .shadow(color: Color.black, radius: 5, x: 0, y: 1)
                             
                             Text("\(personaje.race) - \(personaje.gender)\nAfiliación: \(personaje.affiliation)\nBaseKi: \(personaje.ki)\nTotal KI: \(personaje.maxKi)")
                                  .frame(maxWidth: .infinity, alignment: .leading)
