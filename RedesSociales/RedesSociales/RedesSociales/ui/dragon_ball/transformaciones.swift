@@ -49,8 +49,9 @@ struct transformacionesPersonaje: View{
                               result.image?
                                   .resizable()
                                   .scaledToFill()
-                                  .padding(40)
-                                  .frame(width: 160, height: 160)
+                                  .aspectRatio(contentMode: .fit)
+                                  .padding(10)
+                                  .frame(width: 150, height: 150)
                                   .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
                                   .overlay(
                                       RoundedRectangle(cornerRadius: 10)
@@ -59,7 +60,7 @@ struct transformacionesPersonaje: View{
                                   .shadow(color: Color("newPrimaryColor"), radius: 5, x: 0, y: 1)
                           }.frame(width: 150, height: 150)
                               .background(Color.white)
-                          .padding(15)
+                          .padding(10)
                       }.padding(5)
                   }
               }

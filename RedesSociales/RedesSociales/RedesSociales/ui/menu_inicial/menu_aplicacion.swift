@@ -18,7 +18,7 @@ struct MenuNavegacion: View {
             
             PantallaPersonaje()
                 .tabItem { Label("Dragon Ball API", systemImage: "sparkles.tv") }
-            Text("Perfil")
+            perfil_personal()
                 .tabItem { Label("Perfil", systemImage: "person.crop.circle.fill") }
         }
     }

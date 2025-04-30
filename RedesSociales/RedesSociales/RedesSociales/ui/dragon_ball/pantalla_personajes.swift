@@ -32,10 +32,10 @@ struct PantallaPersonaje: View {
                                     result.image?
                                     .resizable()
                                     .scaledToFill()
-                                
+                                    .aspectRatio(contentMode: .fit)
                                     }
-                                    .frame(width: 130, height: 130)
-                                    .padding(100)
+                                    .frame(width: 220, height: 220)
+                                    .padding(20)
                                     .frame(maxWidth: .infinity)
                                     .background(Color.teal)
                                     .shadow(color: Color.black, radius: 5, x: 0, y: 1)
