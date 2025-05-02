@@ -10,6 +10,8 @@ import SwiftUI
 class DragonBallAPI: Codable{
     let url_base = "https://dragonball-api.com/api"
     
+    //PERSONAJES
+    
     func descargar_pagina_personajes() async -> PaginaResultados?{
         let ubicacion_recurso = "/characters"
         
@@ -21,6 +23,22 @@ class DragonBallAPI: Codable{
         
         return await descargar(recurso: ubicacion_recurso)
     }
+    
+    //PLANETAS
+    
+    func descargar_pagina_planetas() async -> PaginaResultadosPlanetas?{
+        let ubicacion_recurso = "/planets"
+        
+        return await descargar(recurso: ubicacion_recurso)
+    }
+    
+    func descargar_informacion_planetas(id: Int) async -> Planeta?{
+        let ubicacion_recurso = "/planets/\(id)"
+        
+        return await descargar(recurso: ubicacion_recurso)
+    }
+    
+    //SIGUIENTE
     
     private func descargar<TipoGenerico: Codable>(recurso: String) async -> TipoGenerico? {
         do {

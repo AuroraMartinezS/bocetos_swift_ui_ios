@@ -17,9 +17,12 @@ struct MenuNavegacion: View {
                 .badge(controlador.publicaciones.count)
             
             PantallaPersonaje()
-                .tabItem { Label("Dragon Ball API", systemImage: "sparkles.tv") }
+                .tabItem { Label("Personajes", systemImage: "sparkles.tv") }
+            PantallaPlaneta()
+                .tabItem { Label("Planetas", systemImage:"mountain.2.circle.fill") }
             perfil_personal()
                 .tabItem { Label("Perfil", systemImage: "person.crop.circle.fill") }
+            
         }
     }
 }

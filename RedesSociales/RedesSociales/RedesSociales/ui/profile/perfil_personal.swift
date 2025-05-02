@@ -29,7 +29,6 @@ struct perfil_personal: View {
             
             VStack(){
                 HStack(){
-                    
                     ZStack(alignment:.bottomTrailing){
                         PhotosPicker(selection: $foto_seleccionada){
                             Image(uiImage: foto_a_mostrar ?? UIImage(resource: .avatarPersona))
@@ -37,6 +36,10 @@ struct perfil_personal: View {
                                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                                 .frame(width: 100, height: 100)
                                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 50)
+                                        .stroke(Color("BlancoTenue"), lineWidth: 5)
+                                    )
                         }
                         .onChange(of: foto_seleccionada) {valor_anterior, valor_nuevo in
                             Task{
@@ -48,18 +51,14 @@ struct perfil_personal: View {
                                 }
                             }
                         }
-                        
-                        
+                    
                         Image(systemName: "pencil")
-                            .padding(5)
+                            .padding(2)
                             .fontWeight(.bold)
-                            .font(.system(size: 25))
+                            .font(.system(size: 30))
                             .foregroundColor(.cyan)
-
-                        
                     }
-                    
-                    
+                
                     VStack(){
                         Text("Aurora Martínez")
                             .font(.system(size: 25))
@@ -99,13 +98,9 @@ struct perfil_personal: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color("BlancoTenue"))
                 .clipShape(RoundedRectangle(cornerSize: CGSize(width: 50, height: 50)))
-                
-                
             }
             .padding(30)
             .frame(maxWidth: . infinity)
-            
-            
         }
         
     }

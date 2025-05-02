@@ -11,7 +11,6 @@ struct Personaje: View{
     @Environment(ControladorAplicacion.self) var controlador
     
     var body: some View {
-        //NavigationStack{
         ScrollView{
             VStack(){
                 
@@ -26,8 +25,9 @@ struct Personaje: View{
                     result.image?
                         .resizable()
                         .scaledToFill()
-                }.frame(width: 100, height: 100)
-                    .padding(100)
+                        .aspectRatio(contentMode: .fit)
+                }.frame(width: 220, height: 220)
+                    .padding(10)
                     .shadow(color: Color("newPrimaryColor"), radius: 5, x: 0, y: 1)
                 
                 NavigationLink{
@@ -45,7 +45,6 @@ struct Personaje: View{
                         .background(Color.teal)
                         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
                 }
-                    
 
                 Text("\(controlador.personajemonoChino?.race ?? "Raza") - \(controlador.personajemonoChino?.gender ?? "Género")\nAfiliación: \(controlador.personajemonoChino?.affiliation ?? "Afilación")\nBaseKi: \(controlador.personajemonoChino?.ki ?? "KI")\nTotal KI: \(controlador.personajemonoChino?.maxKi ?? "totalKI")")
                      .frame(maxWidth: .infinity, alignment: .leading)
@@ -79,13 +78,8 @@ struct Personaje: View{
                     .foregroundStyle(Color("newPrimaryColor"))
                     .padding(20)
                     .lineSpacing(8)
-                
-                
             }.padding(15)
         }.background(Color("backgroundColor"))
-        
-        //}
-            
     }
 }
 
@@ -93,8 +87,6 @@ struct Personaje: View{
     NavigationStack{
         Personaje()
             .environment(ControladorAplicacion())
-        
     }
-    
 }
 
